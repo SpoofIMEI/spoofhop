@@ -41,10 +41,7 @@ def main():
 \_ _ \    |_) | | | |   | | | | | |_      | |_| |   | | | | |_) |
  ___) | |  __/  | |_| | | |_| | |  _|        _  | | |_| |    __/ 
 | __ /  |_|      \___/   \___/  |_|       |_| |_|  \_ _/  |_|    
-                                                                
-
-
-    """.strip())
+""")
 
     if os.path.isfile(arguments.domain_list):
         arguments.domain_list = [line.strip() for line in open(arguments.domain_list).read().split('\n')]
@@ -100,6 +97,7 @@ class log:
 
 def exit_gracefully(*args):
     log.print(*args)
+    
     if os.getuid() == 0 and not arguments.dont_autoroute:
         os.system("iptables -F OUTPUT")
 
@@ -140,7 +138,7 @@ if __name__ == "__main__":
     if os.getuid() != 0:
         exit_gracefully("Program must be run as root", "error")
     
-    if arguments.dont_autoroute:
+    if not arguments.dont_autoroute:
         os.system("iptables -I OUTPUT -j NFQUEUE --queue-num 1")
 
     try:
