@@ -12,7 +12,7 @@ By creating a netfilter queue Spoofhop can analyze outgoing DNS queries, block t
 without the program not even knowing that its packet didn't go to the correct destination.
 
 ## Screenshot
-<img src="https://github.com/R00tendo/spoofhop/assets/72181445/f7208d5c-c1ce-4b07-bfb3-375c20c60ae8" width=600 heigth=750></img>
+<img src="https://github.com/R00tendo/spoofhop/assets/72181445/35d3f785-f68a-436f-b8da-c6a5f099a280" width=600 heigth=750></img>
 
 ## Installation
 ```
